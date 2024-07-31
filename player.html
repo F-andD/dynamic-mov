@@ -1,0 +1,163 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Movie Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container"><img src="https://i.imgur.com/fzahgbw.gif" alt="Animated Image" class="top-left">
+                 
+                 <style>
+                     
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.top-left {
+    width: 120%; /* Responsive width */
+    margin-left: -50px;
+    height: auto; /* Maintain aspect ratio */
+    z-index: 999999999;
+}
+
+
+
+                 </style>
+            </div>
+            <div class="menu-container">
+                <ul class="menu-list">
+                            <li class="menu-list-item active">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                Home
+            </a>
+        </li>
+                    <li class="menu-list-item">Movies</li>
+                    <li class="menu-list-item">Series</li>
+                    <li class="menu-list-item">Popular</li>
+                    <li class="menu-list-item">Trends</li>
+
+                </ul>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="img/profile.jpg" alt="">
+                <div class="profile-text-container">
+                    <span class="profile-text">Profile</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="toggle">
+                    <i class="fas fa-moon toggle-icon"></i>
+                    <i class="fas fa-sun toggle-icon"></i>
+                    <div class="toggle-ball"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <i class="left-menu-icon fas fa-search"></i>
+        <i class="left-menu-icon fas fa-home"></i>
+        <i class="left-menu-icon fas fa-users"></i>
+        <i class="left-menu-icon fas fa-bookmark"></i>
+        <i class="left-menu-icon fas fa-tv"></i>
+        <i class="left-menu-icon fas fa-hourglass-start"></i>
+        <i class="left-menu-icon fas fa-shopping-cart"></i>
+    </div>
+    <div style="margin-left: 50px;" class="container">
+
+            <style>
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+        }
+                .nolinkfound {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 40vh; /* Adjust as needed to center vertically */
+            text-align: center; /* Center text horizontally */
+        }
+    </style>
+    <div class="nolinkfound">
+        <img style="width: 10%;" src="https://media.tenor.com/f1fVZ5yuLaIAAAAM/sad.gif">
+        <br>
+        <br>
+        <h2>Link Not Found</h1>
+        <h4><a href="index.html">Go back home</a></h2>
+    </div>
+    <iframe id="dynamic-iframe" scrolling="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <div class="copy-link-section">
+
+
+
+
+            <br><br>
+    <div class="styled-div" style="margin-left: 10px; margin-right: 10px; width: 95%;">
+        <h2>Enoy The Show !</h2>
+        <br>
+        <h5>Join Our Community to explore more.</h5>
+        <br>
+            <button 
+        style="
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #600c85; /* Button background color */
+            color: white; /* Text color */
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 
+                0 0 15px 5px rgba(96, 12, 133, 0.8), /* Outer glow effect */
+                inset 0 0 10px rgba(96, 12, 133, 0.5); /* Inner glow effect */
+            transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+        "
+        onmouseover="this.style.boxShadow='0 0 25px 10px rgba(96, 12, 133, 1), inset 0 0 15px rgba(96, 12, 133, 0.7)'"
+        onmouseout="this.style.boxShadow='0 0 15px 5px rgba(96, 12, 133, 0.8), inset 0 0 10px rgba(96, 12, 133, 0.5)'"
+    >
+        Join
+    </button>
+    </div>
+    <iframe id="dynamic-iframe" scrolling="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <script>
+        // Function to get query parameters
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Check if 'src' parameter exists and set iframe src if it does
+        window.onload = function() {
+            const iframeSrc = getQueryParameter('src');
+            if (iframeSrc) {
+                document.getElementById('dynamic-iframe').src = iframeSrc;
+
+                // Hide the 'nolinkfound' div and show the 'styled-div'
+                document.querySelector('.nolinkfound').style.display = 'none';
+                document.querySelector('.styled-div').style.display = 'block'; // Use 'block' for default display
+
+                // Update URL with hash without reloading the page
+                const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '#hahaha';
+                window.history.replaceState({}, document.title, newUrl);
+            } else {
+                // If no link is found, ensure the 'nolinkfound' div is visible
+                document.querySelector('.nolinkfound').style.display = 'block'; // Use 'block' for default display
+                document.querySelector('.styled-div').style.display = 'none';
+            }
+        };
+    </script>
+</body>
+
+</html>
